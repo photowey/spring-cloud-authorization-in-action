@@ -1,0 +1,77 @@
+server:
+  port: ${local.config.auth.server.port}
+  servlet:
+    context-path: /${local.config.auth.server.path}
+
+spring:
+  application:
+    name: "auth-server"
+  profiles:
+    active: oauth2,dev
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    check-template: true
+    check-template-location: true
+  datasource:
+    data: classpath:/database/scripts/data-h2.sql
+    driverClassName: org.h2.Driver
+    password: password
+    schema: classpath:/org/springframework/security/oauth2/server/authorization/oauth2-authorization-schema.sql,classpath:/org/springframework/security/oauth2/server/authorization/oauth2-authorization-consent-schema.sql,classpath:/org/springframework/security/oauth2/server/authorization/client/oauth2-registered-client-schema.sql,classpath:/database/scripts/schema-h2.sql
+    sql-script-encoding: UTF-8
+    url: jdbc:h2:mem:testdb;;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format-sql: true
+        jdbc:
+          batch_size: 20
+          batch_versioned_data: true
+          fetch_size: 200
+          time_zone: "Asia/Shanghai"
+        order_inserts: true
+        order_updates: true
+    show-sql: true
+
+oauth2:
+  access:
+    token:
+      time: 1
+      time.unit: day
+  refresh:
+    token:
+      time: 4
+      time.unit: day
+  token:
+    issuer: http://${local.config.auth.server.host}:${local.config.auth.server.port}/${local.config.auth.server.path}
+
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+  env:
+    active: ${spring.profiles.actice}
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: [health,info]

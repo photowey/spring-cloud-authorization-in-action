@@ -1,0 +1,16 @@
+oauth2:
+    registered:
+        client:
+            authorization:
+                code:
+                    id: authorization-code-messaging-client
+                    redirect:
+                        uri: http://${local.config.auth.client.host}:${local.config.auth.client.port}/${local.config.auth.client.path}/authorized
+                    secret: '{noop}secret2'
+            client:
+                credentials:
+                    id: client-credentials-messaging-client
+                    secret: '{noop}secret1'
+            password:
+                id: password-messaging-client
+                secret: '{noop}secret3'

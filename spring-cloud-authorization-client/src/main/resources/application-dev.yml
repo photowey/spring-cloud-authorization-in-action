@@ -1,0 +1,15 @@
+local:
+  config:
+    auth:
+      server:
+        host: 127.0.0.1
+        port: 9000
+        path: auth-server
+      client:
+        host: 127.0.0.1
+        port: 8080
+        path: auth-client
+      resource:
+        host: 127.0.0.1
+        port: 8090
+        path: resource-server
