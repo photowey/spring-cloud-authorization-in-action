@@ -1,16 +1,17 @@
 local:
   config:
+    localhost: 192.168.217.1
     auth:
       server:
-        host: 192.168.89.1
+        host: ${local.config.localhost}
         port: 9000
         path: auth-server
       client:
-        host: 192.168.89.1
+        host: ${local.config.localhost}
         port: 8080
         path: auth-client
       resource:
-        host: 192.168.89.1
+        host: ${local.config.localhost}
         port: 8090
         path: resource-server
 
