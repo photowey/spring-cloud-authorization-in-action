@@ -43,6 +43,8 @@
         <webjars-locator.version>0.42</webjars-locator.version>
         <webjars-bootstrap.version>5.1.3</webjars-bootstrap.version>
         <webjars-jquery.version>3.6.0</webjars-jquery.version>
+
+        <knife4j-starter.version>3.0.2</knife4j-starter.version>
     </properties>
 
     <dependencies>
@@ -80,6 +82,12 @@
                 <groupId>org.webjars</groupId>
                 <artifactId>jquery</artifactId>
                 <version>${webjars-jquery.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
