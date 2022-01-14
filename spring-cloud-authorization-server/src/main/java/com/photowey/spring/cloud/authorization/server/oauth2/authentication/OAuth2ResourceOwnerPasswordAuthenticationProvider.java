@@ -1,4 +1,4 @@
-package com.photowey.spring.cloud.authorization.server.oauth.authentication;
+package com.photowey.spring.cloud.authorization.server.oauth2.authentication;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

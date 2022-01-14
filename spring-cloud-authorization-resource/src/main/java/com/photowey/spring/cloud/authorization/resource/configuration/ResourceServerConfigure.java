@@ -11,9 +11,16 @@ import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * {@code ResourceServerConfigure}
+ *
+ * @author photowey
+ * @date 2022/01/13
+ * @since 1.0.0
+ */
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, order = 0)
-public class ResourceServerConfiguration {
+public class ResourceServerConfigure {
 
     @Value("${jwk.set.uri}")
     private String jwkSetUri;

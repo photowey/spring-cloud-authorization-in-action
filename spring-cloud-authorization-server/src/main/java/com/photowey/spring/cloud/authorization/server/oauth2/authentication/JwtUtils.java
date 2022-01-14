@@ -1,4 +1,4 @@
-package com.photowey.spring.cloud.authorization.server.oauth.authentication;
+package com.photowey.spring.cloud.authorization.server.oauth2.authentication;
 
 import org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames;
 import org.springframework.security.oauth2.core.oidc.IdTokenClaimNames;
@@ -30,8 +30,8 @@ public class JwtUtils {
         return JoseHeader.withAlgorithm(SignatureAlgorithm.RS256);
     }
 
-    public static JwtClaimsSet.Builder accessTokenClaims(RegisteredClient registeredClient,
-                                                         String issuer, String subject, Set<String> authorizedScopes) {
+    public static JwtClaimsSet.Builder accessTokenClaims(
+            RegisteredClient registeredClient, String issuer, String subject, Set<String> authorizedScopes) {
 
         Instant issuedAt = Instant.now();
         Instant expiresAt = issuedAt.plus(registeredClient.getTokenSettings().getAccessTokenTimeToLive());
@@ -53,8 +53,8 @@ public class JwtUtils {
         return claimsBuilder;
     }
 
-    public static JwtClaimsSet.Builder idTokenClaims(RegisteredClient registeredClient,
-                                                     String issuer, String subject, String nonce) {
+    public static JwtClaimsSet.Builder idTokenClaims(
+            RegisteredClient registeredClient, String issuer, String subject, String nonce) {
 
         Instant issuedAt = Instant.now();
         Instant expiresAt = issuedAt.plus(30, ChronoUnit.MINUTES);

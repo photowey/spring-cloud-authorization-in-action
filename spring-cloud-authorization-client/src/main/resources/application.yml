@@ -35,7 +35,7 @@ info:
       source: @java.version@
       target: @java.version@
   env:
-    active: ${spring.profiles.actice}
+    active: ${spring.profiles.active}
 
 management:
   endpoint:

@@ -31,6 +31,13 @@ public class OAuth2ClientConfigure {
     @Value("${oauth2.token.uri}")
     private String oauth2TokenUri;
 
+    @Value("${local.config.auth.server.host}")
+    private String host;
+    @Value("${local.config.auth.server.port}")
+    private Integer port;
+    @Value("${local.config.auth.server.path}")
+    private String path;
+
     @Bean
     public ClientRegistrationRepository clientRegistrationRepository() {
 
@@ -69,7 +76,7 @@ public class OAuth2ClientConfigure {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .redirectUri("{baseUrl}/login/oauth2/code/{registrationId}")
                 .scope("openid")
-                .authorizationUri("http://127.0.0.1:9000/springauthserver/connect/register")
+                .authorizationUri(String.format("http://%s:%s/%s/connect/register", host, port, path))
                 .tokenUri(oauth2TokenUri)
                 .clientName("messaging-client-oidc")
                 .build();

@@ -3,6 +3,13 @@ package com.photowey.spring.cloud.authorization.resource.service;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.util.Assert;
 
+/**
+ * {@code JwtService}
+ *
+ * @author photowey
+ * @date 2022/01/13
+ * @since 1.0.0
+ */
 public interface JwtService {
 
     String USER_ID_CLAIM = "userId";

@@ -1,4 +1,4 @@
-package com.photowey.spring.cloud.authorization.server.oauth.authentication;
+package com.photowey.spring.cloud.authorization.server.oauth2.authentication;
 
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;

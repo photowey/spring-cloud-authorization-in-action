@@ -14,8 +14,8 @@ import com.photowey.spring.cloud.authorization.server.jackson2.mixin.UserPrincip
 import com.photowey.spring.cloud.authorization.server.jpa.audit.AuditDeletedDate;
 import com.photowey.spring.cloud.authorization.server.jpa.entity.OAuthUserPrincipal;
 import com.photowey.spring.cloud.authorization.server.jpa.entity.UserAuthority;
-import com.photowey.spring.cloud.authorization.server.oauth.authentication.OAuth2ResourceOwnerPasswordAuthenticationConverter;
-import com.photowey.spring.cloud.authorization.server.oauth.authentication.OAuth2ResourceOwnerPasswordAuthenticationProvider;
+import com.photowey.spring.cloud.authorization.server.oauth2.authentication.OAuth2ResourceOwnerPasswordAuthenticationConverter;
+import com.photowey.spring.cloud.authorization.server.oauth2.authentication.OAuth2ResourceOwnerPasswordAuthenticationProvider;
 import com.photowey.spring.cloud.authorization.server.service.JwtCustomizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

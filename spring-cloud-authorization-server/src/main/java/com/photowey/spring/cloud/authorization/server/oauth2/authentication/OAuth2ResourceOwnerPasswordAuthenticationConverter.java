@@ -1,4 +1,4 @@
-package com.photowey.spring.cloud.authorization.server.oauth.authentication;
+package com.photowey.spring.cloud.authorization.server.oauth2.authentication;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

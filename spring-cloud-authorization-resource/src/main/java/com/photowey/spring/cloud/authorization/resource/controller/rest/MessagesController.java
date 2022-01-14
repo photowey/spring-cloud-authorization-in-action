@@ -7,6 +7,13 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * {@code MessagesController}
+ *
+ * @author photowey
+ * @date 2022/01/13
+ * @since 1.0.0
+ */
 @RestController
 public class MessagesController {
 

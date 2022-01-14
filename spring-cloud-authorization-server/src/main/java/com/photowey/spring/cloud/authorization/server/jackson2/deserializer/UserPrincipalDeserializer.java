@@ -24,7 +24,7 @@ import java.util.Set;
  */
 public class UserPrincipalDeserializer extends JsonDeserializer<OAuthUserPrincipal> {
 
-    private static final TypeReference<AuditDeletedDate> AUDIT_DELETED_DATE_OBJECT = new TypeReference<>() {
+    private static final TypeReference<AuditDeletedDate> AUDIT_DELETED_DATE_OBJECT = new TypeReference<AuditDeletedDate>() {
     };
 
     @Override
